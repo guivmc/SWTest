@@ -1,36 +1,47 @@
-header{
-    background-color: #ccc;
+*{
+    padding: 0;
+    margin: 0;
+}
+header, footer{
+    background-color: #ec0000;
     color: red;
     border: 2px solid rgba(161, 159, 159, 0.8);
     border-radius: 5px;
+    height: 100px;
+    width: 1345px;
 }
 body{
     background-color: #fff;
     color:red;
+    background-image: url(./imagens/mulher-digitando-celular-iphone-sorrindo-750x500.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* opacity: 0.5; */
 }
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
     
-}
-input[type=number] { 
-   -moz-appearance: textfield;
-   appearance: textfield;
 }
 .content{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 500px;
+
+    /* opacity: 0.5; */
 }
 .form{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 250px;
-    height: 300px;
+    height: 200px;
     border: 1px solid #ccc;
     border-radius:25px;
     font-size: 20px;
-    justify-content: center;
     text-align: center;
-    align-items: center;
+
 }
 button{
     font-size: 16px;
