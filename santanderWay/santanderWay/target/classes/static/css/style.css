@@ -13,7 +13,7 @@ header, footer{
 body{
     background-color: #fff;
     color:red;
-    background-image: url(./imagens/mulher-digitando-celular-iphone-sorrindo-750x500.jpg);
+    background-image: url(imagens/mulher-digitando-celular-iphone-sorrindo-750x500.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     /* opacity: 0.5; */
