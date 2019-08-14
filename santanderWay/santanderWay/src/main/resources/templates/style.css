@@ -1,0 +1,41 @@
+header{
+    background-color: #ccc;
+    color: red;
+    border: 2px solid rgba(161, 159, 159, 0.8);
+    border-radius: 5px;
+}
+body{
+    background-color: #fff;
+    color:red;
+}
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+.form{
+    width: 250px;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius:25px;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+button{
+    font-size: 16px;
+    background-color: #ccc;
+    border: 2px solid rgba(161, 159, 159, 0.8);
+    border-radius: 5px;
+    color: red;
+}
