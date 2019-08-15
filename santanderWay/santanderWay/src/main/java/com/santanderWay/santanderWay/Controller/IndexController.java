@@ -3,9 +3,7 @@ package com.santanderWay.santanderWay.Controller;
 import com.santanderWay.santanderWay.Model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class IndexController
@@ -14,7 +12,7 @@ public class IndexController
     @RequestMapping("/")
     public String index()
     {
-        return "index";
+        return "view/index";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -24,6 +22,6 @@ public class IndexController
         System.out.println("Name:" + user.getId() +
                 "Password:" + user.getPassword());
 
-        return "redirect:index.html";
+        return "view/index";
     }
 }
