@@ -2,23 +2,23 @@ package com.santanderWay.santanderWay.Model;
 
 public class User
 {
-    private String  name;
+    private String  id;
     private String password;
 
-    public User(String name, String password)
+    public User(String id, String password)
     {
-        this.name = name;
+        this.id = id;
         this.password = password;
     }
 
-    public String getName()
+    public String getId()
     {
-        return name;
+        return id;
     }
 
-    public void setName(String name)
+    public void setId(String id)
     {
-        this.name = name;
+        this.id = id;
     }
 
     public String getPassword()
