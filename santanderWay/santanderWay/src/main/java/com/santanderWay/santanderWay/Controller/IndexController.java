@@ -11,18 +11,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexController
 {
 
-    //
     @RequestMapping("/")
     public String index()
     {
         return "index";
     }
 
-    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
-    public String addContact(@ModelAttribute("User") User user, BindingResult result)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(@ModelAttribute("User") User user, BindingResult result)
     {
 
-        System.out.println("Name:" + user.getName() +
+        System.out.println("Name:" + user.getId() +
                 "Password:" + user.getPassword());
 
         return "redirect:index.html";
