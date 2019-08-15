@@ -1,22 +1,31 @@
 package com.santanderWay.santanderWay.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User
 {
-    private String  id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer  id;
+
     private String password;
 
-    public User(String id, String password)
+    public User(Integer id, String password)
     {
         this.id = id;
         this.password = password;
     }
 
-    public String getId()
+    public long getId()
     {
-        return id;
+        return id.intValue();
     }
 
-    public void setId(String id)
+    public void setId(Integer id)
     {
         this.id = id;
     }

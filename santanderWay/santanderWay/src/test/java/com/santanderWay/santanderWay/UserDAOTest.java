@@ -1,11 +1,6 @@
 package com.santanderWay.santanderWay;
 
 import com.santanderWay.santanderWay.Model.User;
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,7 +28,7 @@ public class UserDAOTest
     public void save()
     {
         //Prep
-        User u = new User("1", "1");
+        User u = new User(1, "1");
 
         // Action
         this.dao.save(u);
@@ -47,20 +42,20 @@ public class UserDAOTest
     public void update()
     {
         //Prep
-        User u = new User("1", "1");
-        User u1 = new User("2", "2");
-        User u2 = new User("3", "3");
+        User u = new User(1, "1");
+        User u1 = new User(2, "2");
+        User u2 = new User(3, "3");
 
         this.dao.save(u);
         this.dao.save(u1);
         this.dao.save(u2);
 
         // Action
-        this.dao.update(new User("2", "6"));
+        this.dao.update(new User(2, "6"));
 
         //Assertion
         Assert.assertTrue(this.dao.getBDMOCK().size() == 3);
-        Assert.assertTrue(this.dao.getBDMOCK().get(1).getId().equals("2"));
+        //Assert.assertTrue(this.dao.getBDMOCK().get(1) == 2));
         Assert.assertTrue(this.dao.getBDMOCK().get(1).getPassword().equals("6"));
     }
 
@@ -68,35 +63,35 @@ public class UserDAOTest
     public void delete()
     {
         //Prep
-        User u = new User("1", "1");
-        User u1 = new User("2", "2");
-        User u2 = new User("3", "3");
+        User u = new User(1, "1");
+        User u1 = new User(2, "2");
+        User u2 = new User(3, "3");
 
         this.dao.save(u);
         this.dao.save(u1);
         this.dao.save(u2);
 
         //Action
-        this.dao.delete("2");
+        this.dao.delete(2);
 
         //Assertion
         Assert.assertTrue(this.dao.getBDMOCK().size() == 2);
-        Assert.assertNull(this.dao.serarch("2"));
+        Assert.assertNull(this.dao.serarch(2));
     }
 
     @Test
     public void serarch()
     {
         //Prep
-        User u = new User("1", "1");
-        User u1 = new User("2", "2");
-        User u2 = new User("3", "3");
+        User u = new User(1, "1");
+        User u1 = new User(2, "2");
+        User u2 = new User(3, "3");
 
         this.dao.save(u);
         this.dao.save(u1);
         this.dao.save(u2);
 
         //Action + Assertion
-        Assert.assertNotNull(this.dao.serarch("2"));
+        Assert.assertNotNull(this.dao.serarch(2));
     }
 }

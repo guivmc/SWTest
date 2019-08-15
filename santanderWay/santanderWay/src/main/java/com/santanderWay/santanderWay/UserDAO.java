@@ -28,7 +28,7 @@ public class UserDAO implements DAO<User>
 
         for (User u : this.BDMOCK)
         {
-            if(u.getId().equals (user.getId()))
+            if(u.getId() == user.getId())
             {
                 index = this.BDMOCK.indexOf(u);
                 this.BDMOCK.set(index, user);
@@ -38,11 +38,11 @@ public class UserDAO implements DAO<User>
     }
 
     @Override
-    public void delete(String id)
+    public void delete(Integer id)
     {
         for (User u : this.BDMOCK)
         {
-            if(u.getId().equals (id))
+            if(u.getId() == id.intValue())
             {
                 this.BDMOCK.remove(u);
                 break;
@@ -51,11 +51,11 @@ public class UserDAO implements DAO<User>
     }
 
     @Override
-    public User serarch(String id)
+    public User serarch(Integer id)
     {
         for (User u : this.BDMOCK)
         {
-            if(u.getId().equals (id))
+            if(u.getId() == id.intValue())
                 return u;
         }
 
