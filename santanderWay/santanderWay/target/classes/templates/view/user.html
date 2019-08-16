@@ -20,14 +20,14 @@
 
     <div class="col-1"></div>
     <div class="col-5 m-4 divForm" style="height: 500px;">
-        <form class="form" action="User">
+        <form class="form"  method="post" action="/addUser">
             <div class="row" style="padding-top: 20px">
                 <!-- CPF -->
                 <div class="col-5 text-right">
                     <label>Digite seu CPF: </label>
                 </div>
                 <div class="col-4 text-left">
-                    <input type="number" placeholder="Digite seu CPF" name="id" style="width: 100%">
+                    <input type="number" placeholder="Digite seu CPF" name="identifier" style="width: 100%">
                 </div>
                 <div class="col-3 text-right"></div>
 
@@ -60,7 +60,7 @@
                     <label> Data de Nascimento</label>
                 </div>
                 <div class="col-4 text-left">
-                    <input type="date" name="dataNasc" style="width: 100%">
+                    <input type="date" name="bornDate" style="width: 100%">
                     <div class="col-2 text-right"></div>
                 </div>
 
@@ -80,7 +80,7 @@
                     <label> Confirme seu email:</label>
                 </div>
                 <div class="col-4 text-left">
-                    <input type="email" placeholder="Confirme seu e-mail" name="CEmail"style="width: 100%">
+                    <input type="email" placeholder="Confirme seu e-mail"  style="width: 100%">
                 </div>
                 <div class="col-3 text-right"></div>
                    <br>
@@ -98,7 +98,7 @@
                     <label>Confirme sua Senha: </label>
                 </div>
                 <div class="col-4 text-left">
-                    <input type="password" placeholder="Confirme sua Senha" name="password" style="width: 100%">
+                    <input type="password" placeholder="Confirme sua Senha" style="width: 100%">
                 </div>
                 <div class="col-3 text-right">
                 </div>
@@ -114,13 +114,5 @@
     </div>
     <div class="col"></div>
 </div>
-
-</br>
-</br>
-</br>
-
-</div>
-
-
 </body>
 </html>
