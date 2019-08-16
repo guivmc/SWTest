@@ -1,6 +1,8 @@
 package com.santanderWay.santanderWay.Controller;
 
 import com.santanderWay.santanderWay.Model.User;
+import com.santanderWay.santanderWay.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class IndexController
 {
+    @Autowired
+    private UserRepository userRepository;
+
 
     @RequestMapping("/")
     public String index()
