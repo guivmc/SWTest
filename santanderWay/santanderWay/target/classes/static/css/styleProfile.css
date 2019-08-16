@@ -1,0 +1,9 @@
+header, footer{
+        background-color:rgba(161, 159, 159, 0.8);
+        color: red;
+        border: 2px solid  #ec0000;
+        border-radius: 5px;
+        height: 100px;
+        width: 1345px;
+
+}
