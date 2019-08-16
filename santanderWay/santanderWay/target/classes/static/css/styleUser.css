@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header, footer{
+    background-color: #ec0000;
+    color: red;
+    border: 2px solid rgba(161, 159, 159, 0.8);
+    border-radius: 5px;
+    height: 100px;
+    width: 1345px;
+}
+body{
+    background-color: #fff;
+    color:black;
+    background-image: url(imagens/mulher-sorrindo-usando-aplicativos-no-celular.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+
+    /* opacity: 0.5; */
+}
+
+.divForm {
+    border: 1px solid #ccc;
+    border-radius:25px;
+    background-color: rgba(181, 181, 182, 0.329);
+}
+
+.form{
+    flex-direction: column;
+    display: table;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+
+
+}
+button{
+    font-size: 16px;
+    border: 2px solid rgba(161, 159, 159, 0.8);
+    border-radius: 5px;
+    color: black;
+}
