@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +14,15 @@
         <h1>
             <img style="width: 250px; height: 75px;" src="css/imagens/santander-logo-8.png"
                 alt="logo do Santander">
-            </h1>
+        </h1>
+
+        <!-- User info -->
+        <div th:each="user : ${user}" class="container">
+            <div class="row">
+                <p>Nome: <span th:text="${user.name}"></span></p>
+            </div>
+        </div>
+
     </header>
     <div class="container">
         <h1 class="text-center">Bem Vindo ao Santader Way</h1>
