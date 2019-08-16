@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styleUser.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <title>Novo de Usuário</title>
+</head>
+
+<body>
+<div class="row">
+    <div class="col-12" style="background-color: #ec0000; height: 100px">
+        <div class="row">
+            <div class="col-2" style="margin-left: 10px; margin-top: 10px">
+                <h1><img style="width: 250px; height: 75px;" src="css/imagens/santander-logo-7.png"
+                         alt="logo do Santander"></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-1"></div>
+    <div class="col-5 m-4 divForm" style="height: 500px;">
+        <form class="form" action="User">
+            <div class="row" style="padding-top: 20px">
+                <!-- CPF -->
+                <div class="col-5 text-right">
+                    <label>Digite seu CPF: </label>
+                </div>
+                <div class="col-4 text-left">
+                    <input type="number" placeholder="Digite seu CPF" name="id" style="width: 100%">
+                </div>
+                <div class="col-3 text-right"></div>
+
+                <!-- Nome -->
+                <div class="col-5 text-right">
+                    <label>Digite seu Nome: </label>
+                </div>
+                <div class="col-6 text-left">
+                    <input type="text" placeholder="Digite seu Nome Completo" name="name" style="width: 100%">
+                </div>
+                <div class="col-1 text-right"></div>
+
+
+                <!-- Opção sexual -->
+                <div class="col-5 text-right">
+                    <label> Escolha sua opção sexual:</label>
+                </div>
+                <div class="col-3 text-left">
+                    <select style="width: 100%">
+                        <option value="" selected disabled hidden>Selecionar</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="col-4 text-right"></div>
+                <br>
+                <!-- Data Nasc -->
+                <div class="col-5 text-right">
+                    <label> Data de Nascimento</label>
+                </div>
+                <div class="col-4 text-left">
+                    <input type="date" name="dataNasc" style="width: 100%">
+                    <div class="col-2 text-right"></div>
+                </div>
+
+                <br>
+
+                <!-- Email-->
+                <div class="col-5 text-right">
+                    <label> Digite seu email:</label>
+                </div>
+                <div class=" col-4 text-right" style="width: 100%">
+                    <input type="email" placeholder="Digite seu e-mail" name="email" style="width: 100%">
+                </div>
+                <div class="col-3 text-right"></div>
+                <br>
+                <!--Confirmação-->
+                <div class="text-right col-5" >
+                    <label> Confirme seu email:</label>
+                </div>
+                <div class="col-4 text-left">
+                    <input type="email" placeholder="Confirme seu e-mail" name="CEmail"style="width: 100%">
+                </div>
+                <div class="col-3 text-right"></div>
+                   <br>
+                <!--Senha-->
+                    <div class="col-5 text-right">
+                        <label>Digite uma Senha: </label>
+                    </div>
+                <div class=" col-4 text-left ">
+                    <input type="password" placeholder="Digite sua Senha" name="password" style="width: 100%">
+                    </div>
+                <div class="text-right col-3"></div>
+
+                <!--Confirma Senha-->
+                <div class="col-5 text-right">
+                    <label>Confirme sua Senha: </label>
+                </div>
+                <div class="col-4 text-left">
+                    <input type="password" placeholder="Confirme sua Senha" name="password" style="width: 100%">
+                </div>
+                <div class="col-3 text-right">
+                </div>
+                <!--Botão-->
+                <div class="col-9 text-right">
+                    <br>
+                    <button>Cadastrar</button>
+                </div>
+
+                </div>
+        </form>
+
+    </div>
+    <div class="col"></div>
+</div>
+
+</br>
+</br>
+</br>
+
+</div>
+
+
+</body>
+</html>
