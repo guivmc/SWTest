@@ -29,4 +29,18 @@ public class IndexController
 
         return "view/index";
     }
+
+    @RequestMapping(value="/addUser", method = RequestMethod.GET)
+    public String addUser()
+    {
+        return "view/user";
+    }
+
+    @RequestMapping(value="/addUser", method = RequestMethod.POST)
+    public String addUser(@ModelAttribute("User") User user)
+    {
+        this.userRepository.save(user);
+
+        return "redirect:/addUser";
+    }
 }
