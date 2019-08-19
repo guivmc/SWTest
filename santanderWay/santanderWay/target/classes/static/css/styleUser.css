@@ -1,6 +1,11 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: "Trebuchet MS";
+
+}
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 header, footer{
     background-color: #ec0000;
@@ -36,6 +41,7 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius:25px;
     background-color: rgba(239, 239, 245, 0.86);
     font-family: "Trebuchet MS";
+    height:600px !important;
 }
 
 .form{

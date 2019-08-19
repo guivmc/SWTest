@@ -1,3 +1,9 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: "Trebuchet MS";
+
+}
 header, footer{
         background-color:rgba(161, 159, 159, 0.8);
         color: red;
@@ -6,4 +12,12 @@ header, footer{
         height: 100px;
         width: 1345px;
 
+}
+.container{
+    height:450px;
+    width300px;
+
+}
+h1{
+font-size:2em!important;
 }
