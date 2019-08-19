@@ -47,9 +47,6 @@ public class IndexController
          return null;
      }
 
-
-
-
     @RequestMapping(value="/addUser", method = RequestMethod.GET)
     public String addUser()
     {
