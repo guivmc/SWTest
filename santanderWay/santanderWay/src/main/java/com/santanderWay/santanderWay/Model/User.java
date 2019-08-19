@@ -21,6 +21,8 @@ public class User implements Serializable
     private String name;
     private String identifier;
 
+    public User(){}
+
     public User(String password, String email, String bornDate, String name, String identifier)
     {
         this.password = password;
