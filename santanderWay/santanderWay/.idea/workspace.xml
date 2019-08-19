@@ -47,10 +47,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/imagens" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/js" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\renan.r.alves\Desktop\SWTest\santanderWay\santanderWay\src\main\resources\static\js" />
       <recent name="C:\Users\vanessa.da.s.quirino\Desktop\SWTest\santanderWay\santanderWay\src\main\resources\templates\imagens" />
     </key>
   </component>
@@ -66,7 +68,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SantanderWayApplication">
+    <configuration name="SantanderWayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.santanderWay.santanderWay.SantanderWayApplication" />
+      <module name="santanderWay" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.santanderWay.santanderWay.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SantanderWayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="santanderWay" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.santanderWay.santanderWay.SantanderWayApplication" />
@@ -74,6 +89,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SantanderWayApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />

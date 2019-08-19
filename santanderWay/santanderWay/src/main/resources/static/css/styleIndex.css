@@ -28,26 +28,20 @@ input[type=number]::-webkit-inner-spin-button {
     align-items: center;
     height: 500px;
 
-    /* opacity: 0.5; */
 }
 .form{
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
-    height: 200px;
+    width: auto;
+    height: 350px;
     border: 1px solid #ccc;
     border-radius:25px;
     font-size: 20px;
     text-align: center;
-    background-color: rgba(181, 181, 182, 0.329);
-
+    background-color: rgba(240, 228, 228, 0.68);
 }
-button{
-    font-size: 16px;
-    background-color: #ccc;
-    border: 2px solid rgba(161, 159, 159, 0.8);
-    border-radius: 5px;
-    color: red;
-}
+input{
+     width:90%!important;
+    }

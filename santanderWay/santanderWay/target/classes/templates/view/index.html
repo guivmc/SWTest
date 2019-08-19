@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styleIndex.css" media="screen" />
+    <link rel="stylesheet" href="css/bootstrap.css">
     <title>Index</title>
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v4.0&appId=669393803566677&autoLogAppEvents=1"></script>
+
 <header>
     <h1><img style="width: 250px; height: 75px;" src="css/imagens/santander-logo-7.png" alt="logo do Santander"></h1>
 </header>
 <div class="content">
     
-    <form class="form" method="post" action="login">
+    <form class="form " method="post" action="login">
         <label>Digite seu CPF: </label>
         <input type="number" placeholder="Digite seu CPF" name="identifier">
         <br>
         <label>Digite sua Senha: </label>
         <input type="password"  class="form-control" placeholder="Digite sua Senha" name="password">
         <br>
-        <button>Login</button>
+        <button class="btn btn-outline-danger">Login</button>
+        <h5>Ou</h5>
+
+        <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
     </form>
 </div>
 <footer>
