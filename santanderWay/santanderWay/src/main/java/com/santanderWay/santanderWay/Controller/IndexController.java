@@ -1,5 +1,7 @@
 package com.santanderWay.santanderWay.Controller;
 
+import com.santanderWay.santanderWay.CartaoRepository;
+import com.santanderWay.santanderWay.Model.Cartao;
 import com.santanderWay.santanderWay.Model.User;
 import com.santanderWay.santanderWay.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ public class IndexController
 {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private CartaoRepository cartaoRepository;
 
 
     @RequestMapping("/")
@@ -41,11 +45,13 @@ public class IndexController
      public ModelAndView login(@ModelAttribute("User") User user, HttpServletRequest request)
      {
          User exist = this.userRepository.findByIdentifierLikeAndPasswordLike(user.getIdentifier(), user.getPassword());
+         Cartao cartao = this.cartaoRepository.findByIdCartao(exist.getId());
 
          if (exist != null)
          {
              ModelAndView model = new ModelAndView("view/profile");
              model.addObject("user", exist);
+             model.addObject("cartao", cartao);
 
              return model;
          }
