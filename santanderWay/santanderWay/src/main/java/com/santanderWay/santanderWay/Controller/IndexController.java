@@ -21,6 +21,7 @@ public class IndexController
 {
     @Autowired
     private UserRepository userRepository;
+
     @Autowired
     private CartaoRepository cartaoRepository;
 
@@ -45,7 +46,7 @@ public class IndexController
      public ModelAndView login(@ModelAttribute("User") User user, HttpServletRequest request)
      {
          User exist = this.userRepository.findByIdentifierLikeAndPasswordLike(user.getIdentifier(), user.getPassword());
-         Cartao cartao = this.cartaoRepository.findByIdCartao(exist.getId());
+         Cartao cartao = this.cartaoRepository.findByIdUser(exist.getId());
 
          if (exist != null)
          {

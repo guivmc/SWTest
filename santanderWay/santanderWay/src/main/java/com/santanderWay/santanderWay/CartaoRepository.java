@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface CartaoRepository extends CrudRepository<Cartao, Integer> {
 
-    Cartao findByIdCartao(long idUser);
+    Cartao findByIdUser(long idUser);
 
 }
