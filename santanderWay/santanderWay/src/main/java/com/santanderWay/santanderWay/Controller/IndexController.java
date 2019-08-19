@@ -44,7 +44,7 @@ public class IndexController
              return model;
          }
 
-         return null;
+         return new ModelAndView("view/index");
      }
 
 

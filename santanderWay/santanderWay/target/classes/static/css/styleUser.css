@@ -22,6 +22,8 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 
 }
+
+
 .content{
     display: flex;
     justify-content: center;
@@ -34,7 +36,8 @@ input[type=number]::-webkit-inner-spin-button {
 .divForm {
     border: 1px solid #ccc;
     border-radius:25px;
-    background-color: rgba(181, 181, 182, 0.329);
+    background-color: rgba(239, 239, 245, 0.86);
+    font-family: "Trebuchet MS";
 }
 
 .form{
