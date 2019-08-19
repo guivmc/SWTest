@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6fd84320-e7f1-4a39-9627-52f8eb915710" name="Default Changelist" comment="" />
+    <list default="true" id="6fd84320-e7f1-4a39-9627-52f8eb915710" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/santanderWay/santanderWay/Controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santanderWay/santanderWay/Controller/CardController.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +114,14 @@
       <workItem from="1565803339215" duration="7891000" />
       <workItem from="1565814822502" duration="404000" />
     </task>
+    <task id="LOCAL-00001" summary="tela cartao">
+      <created>1566236208688</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566236208688</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,5 +139,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tela cartao" />
+    <option name="LAST_COMMIT_MESSAGE" value="tela cartao" />
   </component>
 </project>
