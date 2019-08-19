@@ -52,6 +52,7 @@ public class IndexController
 
 //         request.getSession().setAttribute("test",  "Session Test Success");
 
+
          return new ModelAndView("view/index");
      }
 
@@ -64,7 +65,6 @@ public class IndexController
 //
 //        return "view/index";
 //    }
-
 
     @RequestMapping(value="/addUser", method = RequestMethod.GET)
     public String addUser()
