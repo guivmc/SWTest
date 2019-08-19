@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styleSaldo.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <title>Novo de Usuário</title>
+</head>
+
+<body>
+<div class="row">
+    <div class="col-12" style="background-color: #ec0000; height: 100px">
+        <div class="row">
+            <div class="col-2" style="margin-left: 10px; margin-top: 10px">
+                <h1><img style="width: 250px; height: 75px;" src="css/imagens/santander-logo-7.png"
+                         alt="logo do Santander"></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-1"></div>
+    <div class="col-5 m-4 divForm" style="height: 500px;">
+        <form class="form"  method="post" action="/addSaldo">
+            <div  class="row" style="padding-top: 100px">
+                
+                <!-- N CARD -->
+                <div class="col-5 a text-left">
+                    <label>Digite o numero do cartão: </label>
+                </div>
+                <div class="col-5 text-right">
+                    <input type="number" class="form-control" placeholder="Digite seu Cartao" name="numero" style="width: 100%">
+                </div>
+                <div class="col-2 text-right"></div>
+
+                <!-- SALDO -->
+                <div class="col-5 a text-left">
+                    <label>Digite o valor: </label>
+                </div>
+                <div class="col-5 text-right">
+                    <input type="number" class="form-control" placeholder="Digite o Saldo" name="saldo" style="width: 100%">
+                </div>
+                <div class="col-2 text-right"></div>
+
+                <!--Botão-->
+                <div class="col-9 text-right">
+                    <br>
+
+                    <button class="btn btn-outline-danger">Adicionar Saldo</button>
+                </div>
+
+                </div>
+        </form>
+
+    </div>
+    <div class="col"></div>
+</div>
+</body>
+</html>
