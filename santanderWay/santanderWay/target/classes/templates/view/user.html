@@ -19,7 +19,8 @@
         </div>
     </div>
 
-    <div class="col-1"></div>
+
+      <div class="col-1"></div>
     <div class="col-5 m-4 divForm" style="height: 500px;">
         <form class="form"  method="post" action="/addUser">
             <div  class="row" style="padding-top: 100px">
@@ -74,20 +75,13 @@
                     <label> Digite seu email:</label>
                 </div>
                 <div class=" col-5 text-right" style="width: 100%">
-                    <input type="email" class="form-control" placeholder="Digite seu e-mail" name="email" style="width: 100%">
-                </div>
-                <div class="col-2 text-right"></div>
-                <br>
-                <!--Confirmação-->
-                <div class="text-left col-5" >
-                    <label> Confirme seu email:</label>
-                </div>
-                <div class="col-5 text-right">
-                    <input type="email" class="form-control" placeholder="Confirme seu e-mail"  style="width: 100%">
+                    <input type="email" class="form-control" placeholder="Digite seu e-mail" name="email" style="width: 100%"
+                           data-match-error="Por favor, informe um e-mail correto." required>
+                    <!--<div class="help-block with-errors"></div>-->
                 </div>
                 <div class="col-2 text-right"></div>
 
-                <!--Senha-->
+                  <!--Senha-->
                     <div class="col-5 text-left">
                         <label>Digite uma Senha: </label>
                     </div>
