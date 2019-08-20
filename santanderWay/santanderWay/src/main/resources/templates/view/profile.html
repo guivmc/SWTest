@@ -33,7 +33,7 @@
                         <div class="card__front card__part" style="background-color:black">
                             <img class="card__front-square card__square" src="css/imagens/logo.png">
                             <img class="card__front-logo card__logo"  src="css/imagens/mastercard-logo.png">
-                            <p class="card_numer" th:text="${cartao.numero}">0</p>
+                            <a class="card_numer" th:href="${(#mvc.url('SC#showSaldos').arg(0, cartao.id)).build()}" ><span th:text="${cartao.numero}">0</span></a>
                             <div class="card__space-75">
                                 <p class="card__info" th:text="${cartao.nome}">0name</p>
                             </div>
