@@ -6,6 +6,7 @@ import com.santanderWay.santanderWay.Model.User;
 import com.santanderWay.santanderWay.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,12 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.management.modelmbean.RequiredModelMBean;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Controller
 @Scope("session")
@@ -36,15 +43,18 @@ public class IndexController
      public ModelAndView login(@ModelAttribute("User") User user, HttpServletRequest request)
      {
          User exist = this.userRepository.findByIdentifierLikeAndPasswordLike(user.getIdentifier(), user.getPassword());
-         Cartao cartao = this.cartaoRepository.findByIdUser(exist.getId());
+         //Cartao cartao = this.cartaoRepository.findByIdUser(exist.getId());
+
+         List<Cartao> cards = this.cartaoRepository.findCards(exist.getId());
 
          if (exist != null)
          {
              ModelAndView model = new ModelAndView("view/profile");
              model.addObject("user", exist);
-             model.addObject("cartao", cartao);
+             model.addObject("cards", cards);
 
              request.getSession().setAttribute("userId",  exist.getId());
+             request.getSession().setAttribute("userName",  exist.getName());
 
              return model;
          }

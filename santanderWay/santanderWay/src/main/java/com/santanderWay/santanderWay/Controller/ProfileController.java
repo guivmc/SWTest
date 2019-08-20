@@ -12,7 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @Scope("session")
-public class ProfileController {
+public class ProfileController
+{
 
 
 }

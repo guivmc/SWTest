@@ -33,7 +33,9 @@ public class CardController {
         if(session.getAttribute("userId") == null)
             return "view/index";
 
-        cartao.setIdUser( (long) session.getAttribute("userId"));
+        cartao.setIdUser( (long) session.getAttribute("userId") );
+
+        cartao.setNome( (String) session.getAttribute("userName") );
 
         this.cartaoRepository.save(cartao);
 

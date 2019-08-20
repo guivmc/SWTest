@@ -19,6 +19,21 @@ public class Cartao implements Serializable {
     private String numero;
     private long idUser;
 
+    public Cartao(){}
+
+    public Cartao(long idUser)
+    {
+        this.idUser = idUser;
+    }
+
+    public Cartao( long id, String nome, String numero, long idUser)
+    {
+        this.id = id;
+        this.nome = nome;
+        this.numero = numero;
+        this.idUser = idUser;
+    }
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
