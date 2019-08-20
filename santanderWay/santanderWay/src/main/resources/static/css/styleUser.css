@@ -7,13 +7,12 @@
 input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-header, footer{
+footer{
     background-color: #ec0000;
-    color: red;
-    border: 2px solid rgba(161, 159, 159, 0.8);
-    border-radius: 5px;
-    height: 100px;
-    width: 1345px;
+    color: white;
+   height: 100px;
+    width: 1600px;
+
 }
 body{
     background-color: #fff;
@@ -50,7 +49,6 @@ input[type=number]::-webkit-inner-spin-button {
     display: table;
     align-items: center;
     justify-content: center;
-    align-items: center;
     height: 100%;
     width: 100%;
     font-size: 20px;
