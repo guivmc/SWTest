@@ -81,8 +81,10 @@ public class IndexController
     @RequestMapping(value="/addUser", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("User") User user)
     {
-        this.userRepository.save(user);
+        if( this.userRepository.findByIdentifierLike(user.getIdentifier()) == null)
+            this.userRepository.save(user);
 
         return "redirect:/addUser";
     }
+
 }
