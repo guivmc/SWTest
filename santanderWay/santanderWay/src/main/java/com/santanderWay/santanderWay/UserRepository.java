@@ -7,4 +7,5 @@ public interface UserRepository extends CrudRepository<User, Integer>
 {
     User findById(long id);
     User findByIdentifierLikeAndPasswordLike(String identifier, String password);
+    User findByIdentifierLike(String identifier);
 }
