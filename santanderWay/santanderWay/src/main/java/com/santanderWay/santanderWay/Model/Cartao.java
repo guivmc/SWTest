@@ -18,6 +18,7 @@ public class Cartao implements Serializable {
     private String nome;
     private String numero;
     private long idUser;
+    private String validade;
 
     public Cartao(){}
 
@@ -26,12 +27,13 @@ public class Cartao implements Serializable {
         this.idUser = idUser;
     }
 
-    public Cartao( long id, String nome, String numero, long idUser)
+    public Cartao( long id, String nome, String numero, long idUser, String validade)
     {
         this.id = id;
         this.nome = nome;
         this.numero = numero;
         this.idUser = idUser;
+        this.validade = validade;
     }
 
     public static long getSerialVersionUID() {
@@ -68,5 +70,13 @@ public class Cartao implements Serializable {
 
     public void setIdUser(long idUser) {
         this.idUser = idUser;
+    }
+
+    public String getValidade() {
+        return validade;
+    }
+
+    public void setValidade(String validade) {
+        this.validade = validade;
     }
 }
