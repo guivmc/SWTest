@@ -6,8 +6,10 @@ import com.santanderWay.santanderWay.SaldoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
@@ -35,6 +37,14 @@ public class SaldoController {
         this.saldoRepository.save(saldo);
 
         return "redirect:/addSaldo";
+    }
+
+    @RequestMapping("/{idCard}")
+    public ModelAndView showSaldos(@PathVariable("idCard") long idCard)
+    {
+        System.out.println(idCard);
+
+        return new ModelAndView("view/index");
     }
 
 

@@ -10,6 +10,6 @@ public interface CartaoRepository extends CrudRepository<Cartao, Integer>
 {
     Cartao findByIdUser(long idUser);
 
-    @Query("select new com.santanderWay.santanderWay.Model.Cartao(c.id, c.nome, c.numero, c.idUser) from Cartao c where c.idUser = ?1")
+    @Query("select new com.santanderWay.santanderWay.Model.Cartao(c.id, c.nome, c.numero, c.idUser, c.validade) from Cartao c where c.idUser = ?1")
     List<Cartao> findCards(long filterValue);
 }

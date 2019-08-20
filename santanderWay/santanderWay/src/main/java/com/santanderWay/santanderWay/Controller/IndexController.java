@@ -45,13 +45,13 @@ public class IndexController
          User exist = this.userRepository.findByIdentifierLikeAndPasswordLike(user.getIdentifier(), user.getPassword());
          //Cartao cartao = this.cartaoRepository.findByIdUser(exist.getId());
 
-         List<Cartao> cards = this.cartaoRepository.findCards(exist.getId());
-
          if (exist != null)
          {
+             List<Cartao> cartao = this.cartaoRepository.findCards(exist.getId());
+
              ModelAndView model = new ModelAndView("view/profile");
              model.addObject("user", exist);
-             model.addObject("cards", cards);
+             model.addObject("cartao", cartao);
 
              request.getSession().setAttribute("userId",  exist.getId());
              request.getSession().setAttribute("userName",  exist.getName());
@@ -81,8 +81,10 @@ public class IndexController
     @RequestMapping(value="/addUser", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("User") User user)
     {
-        this.userRepository.save(user);
+        if( this.userRepository.findByIdentifierLike(user.getIdentifier()) == null)
+            this.userRepository.save(user);
 
         return "redirect:/addUser";
     }
+
 }
