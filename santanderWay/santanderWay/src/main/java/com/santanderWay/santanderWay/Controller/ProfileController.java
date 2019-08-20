@@ -49,4 +49,11 @@ public class ProfileController
         return new ModelAndView("view/index");
     }
 
+    @RequestMapping("/logout")
+    public String logout(HttpSession session)
+    {
+        session.invalidate();
+
+        return "view/index";
+    }
 }
