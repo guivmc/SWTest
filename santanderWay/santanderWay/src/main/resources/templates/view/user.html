@@ -57,26 +57,29 @@
 				  else
                       return false;
 			}
+
+            function validacao(){
+
+                var formulario = document.forms["formcadastro"]
+                var senha1 = formulario.password.value
+                var senha2 = formulario.password2.value
+
+                if(senha1=="" || senha2=="" )
+                {
+                    alert("senha não pode estar vazia")
+                    return false;
+                }
+                else if(senha1 != senha2)
+                {
+                    alert("senhas não são iguais")
+                    return false;
+                }
+
+                return true;
+            }
 		</script>
 </head>
 
-    <script type="text/javascript">
-        function validacao(){
-
-            var formulario = document.forms["formcadastro"]
-            var senha1 = formulario.password.value
-            var senha2 = formulario.password2.value
-
-            if(senha1=="" || senha2=="" ){
-                alert("senha não pode estar vazia")
-            }else if(senha1 != senha2){
-                alert("senhas não são iguais")
-            }
-
-            return false;
-        }
-    </script>
-</head>
 <body>
 
 

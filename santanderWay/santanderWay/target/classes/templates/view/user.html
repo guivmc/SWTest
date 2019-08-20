@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/styleUser.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <title>Novo de Usuário</title>
-  
+
     <script language="javascript">
 			function valida(){
 				if(valida_cpf(document.getElementById('cpf').value))
@@ -57,22 +57,29 @@
 				  else
                       return false;
 			}
-                                      function validacao(){
 
-            var formulario = document.forms["formcadastro"]
-            var senha1 = formulario.password.value
-            var senha2 = formulario.password2.value
+            function validacao(){
 
-            if(senha1=="" || senha2=="" ){
-                alert("senha não pode estar vazia")
-            }else if(senha1 != senha2){
-                alert("senhas não são iguais")
+                var formulario = document.forms["formcadastro"]
+                var senha1 = formulario.password.value
+                var senha2 = formulario.password2.value
+
+                if(senha1=="" || senha2=="" )
+                {
+                    alert("senha não pode estar vazia")
+                    return false;
+                }
+                else if(senha1 != senha2)
+                {
+                    alert("senhas não são iguais")
+                    return false;
+                }
+
+                return true;
             }
-
-            return false;
-        }
 		</script>
 </head>
+
 <body>
 
 
@@ -147,10 +154,11 @@
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="col-2 text-right"></div>
-                  <!--Senha-->
-                    <div class="col-5 text-left">
-                        <label>Digite uma Senha: </label>
-                    </div>
+
+                <!--Senha-->
+                <div class="col-5 text-left">
+                    <label>Digite uma Senha: </label>
+                </div>
                 <div class=" col-5 text-right ">
                     <input type="password" name="password" class="form-control" placeholder="Digite sua Senha" style="width: 100%">
                 </div>
@@ -169,7 +177,6 @@
                 <!--Botão-->
                 <div class="col-9 text-right">
                     <br>
-
                     <button class="btn btn-outline-danger" name="validar" id="validar" value="Validar CPF" onClick="valida()">Cadastrar</button>
                 </div>
 
