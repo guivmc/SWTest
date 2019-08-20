@@ -32,16 +32,6 @@ public class IndexController
         return "view/index";
     }
 
-//    @RequestMapping(value = "/login", method = RequestMethod.POST)
-//    public String login(@ModelAttribute("User") User user, BindingResult result)
-//    {
-//
-//        System.out.println("Name:" + user.getId() +
-//                "Password:" + user.getPassword());
-//
-//        return "view/index";
-//    }
-
      @RequestMapping(value = "/login", method = RequestMethod.POST)
      public ModelAndView login(@ModelAttribute("User") User user, HttpServletRequest request)
      {
@@ -54,11 +44,10 @@ public class IndexController
              model.addObject("user", exist);
              model.addObject("cartao", cartao);
 
+             request.getSession().setAttribute("userId",  exist.getId());
+
              return model;
          }
-
-//         request.getSession().setAttribute("test",  "Session Test Success");
-
 
          return new ModelAndView("view/index");
      }

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @Scope("session")
 public class CardController {
@@ -17,14 +19,22 @@ public class CardController {
     private CartaoRepository cartaoRepository;
 
     @RequestMapping(value="/addCard", method = RequestMethod.GET)
-    public String addCard()
+    public String addCard(HttpSession session)
     {
+        if(session.getAttribute("userId") == null)
+            return "view/index";
+
         return "view/cartao";
     }
 
     @RequestMapping(value="/addCard", method = RequestMethod.POST)
-    public String addCard(@ModelAttribute("Cartao") Cartao cartao)
+    public String addCard(@ModelAttribute("Cartao") Cartao cartao, HttpSession session)
     {
+        if(session.getAttribute("userId") == null)
+            return "view/index";
+
+        cartao.setIdUser( (long) session.getAttribute("userId"));
+
         this.cartaoRepository.save(cartao);
 
         return "redirect:/addCard";

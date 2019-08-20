@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class SaldoController {
 
@@ -16,14 +18,20 @@ public class SaldoController {
     private SaldoRepository saldoRepository;
 
     @RequestMapping(value="/addSaldo", method = RequestMethod.GET)
-    public String addSaldo()
+    public String addSaldo(HttpSession session)
     {
+        if(session.getAttribute("userId") == null)
+            return "view/index";
+
         return "view/saldo";
     }
 
     @RequestMapping(value="/addSaldo", method = RequestMethod.POST)
-    public String addSaldo(@ModelAttribute("Saldo") Saldo saldo)
+    public String addSaldo(@ModelAttribute("Saldo") Saldo saldo, HttpSession session)
     {
+        if(session.getAttribute("userId") == null)
+            return "view/index";
+
         this.saldoRepository.save(saldo);
 
         return "redirect:/addSaldo";
