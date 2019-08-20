@@ -26,11 +26,6 @@
 
 
         <div style="width: 800px;" id="carouselCard" class="carousel slide " data-ride="carousel">
-                <ol class="carousel-indicators">
-                <li data-target="#carouselCard" data-slide-to="0" ></li>
-                <li data-target="#carouselCard" data-slide-to="1" class="active"></li>
-                <li data-target="#carouselCard" data-slide-to="2" ></li>
-            </ol>
             <div class="carousel-inner">
                 <div class="carousel-item "th:each="cartao : ${cartao}">
                     <link rel="stylesheet" href="css/card.css">
@@ -40,10 +35,7 @@
                             <img class="card__front-logo card__logo"  src="css/imagens/mastercard-logo.png">
                             <p class="card_numer" th:text="${cartao.numero}">0</p>
                             <div class="card__space-75">
-                                <!-- <span class="card__label">Nome</span> -->
                                 <p class="card__info" th:text="${cartao.nome}">0name</p>
-                            </div>
-                            <div class="card__space-75">
                             </div>
                             <div class="card__space-25">
                                 <span class="card__label">Validade:</span>
@@ -52,27 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item active">
-                    <link rel="stylesheet" href="css/card.css">
-                    <div class="card d-block w-100" style="height:450px;"  th:each="user : ${user}">
-                        <div class="card__front card__part" style="background-color:red">
-                            <img class="card__front-square card__square" src="css/imagens/logo.png">
-                            <img class="card__front-logo card__logo"  src="css/imagens/mastercard-logo.png">
-                            <p class="card_numer"th:text="${numberCard}">number</p>
-                            <div class="card__space-75">
-                                <!-- <span class="card__label">Nome</span> -->
-                                <p class="card__info" th:text="${user.name}">name</p>
-                            </div>
-                            <div class="card__space-75">
-                            </div>
-                            <div class="card__space-25">
-                                <span class="card__label">Validade:</span>
-                                <p class="card__info" th:text="${valid}">validade</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
+                <div class="carousel-item  active">
                     <img class="d-block w-100" style="height:450px;"
                     src="css/imagens/santander-logo-7.png"
                         alt="Third slide">
