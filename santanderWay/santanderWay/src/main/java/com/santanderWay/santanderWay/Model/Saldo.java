@@ -18,9 +18,19 @@ public class Saldo implements Serializable {
     private double valor;
     private long idCartao;
 
+    public Saldo(){}
+
+    public Saldo(long id, double valor, long idCartao)
+    {
+        this.valor = valor;
+        this.idCartao = idCartao;
+        this.id = id;
+    }
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
+
 
     public long getId() {
         return id;
