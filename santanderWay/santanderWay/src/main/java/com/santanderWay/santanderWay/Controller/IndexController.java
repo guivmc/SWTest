@@ -45,10 +45,10 @@ public class IndexController
          User exist = this.userRepository.findByIdentifierLikeAndPasswordLike(user.getIdentifier(), user.getPassword());
          //Cartao cartao = this.cartaoRepository.findByIdUser(exist.getId());
 
-         List<Cartao> cartao = this.cartaoRepository.findCards(exist.getId());
-
          if (exist != null)
          {
+             List<Cartao> cartao = this.cartaoRepository.findCards(exist.getId());
+
              ModelAndView model = new ModelAndView("view/profile");
              model.addObject("user", exist);
              model.addObject("cartao", cartao);
