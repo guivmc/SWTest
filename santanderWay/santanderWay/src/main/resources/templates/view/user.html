@@ -9,7 +9,7 @@
 
     <script language="javascript">
 			function valida(){
-				if(valida_cpf(document.getElementById('cpf').value))
+				if(valida_cpf(document.getElementById('cpf').value) && validacao())
 					return true;
 				else
 					alert('CPF Inválido');
@@ -98,7 +98,7 @@
     <div class="col-5 m-4 divForm" style="height: 500px;">
 
         <!-- INICIO FORMULÁRIO -->
-        <form class="form" name="formcadastro" action="/addUser" method="post" onsubmit="return validacao()">
+        <form class="form" name="formcadastro" action="/addUser" method="post" onsubmit="return valida()">
             <div  class="row" style="padding-top: 100px">
                 <!-- CPF -->
                 <div class="col-5 a text-left">
@@ -177,7 +177,7 @@
                 <!--Botão-->
                 <div class="col-9 text-right">
                     <br>
-                    <button class="btn btn-outline-danger" name="validar" id="validar" value="Validar CPF" onClick="valida()">Cadastrar</button>
+                    <button class="btn btn-outline-danger" name="validar" id="validar" value="Validar CPF">Cadastrar</button>
                 </div>
 
             </div>
