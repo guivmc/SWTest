@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styleIndex.css" media="screen" />
     <link rel="stylesheet" href="css/bootstrap.css">
     <title>Index</title>
 </head>
-
 <body>
+<div class="row">
+    <div class="col-12" style="background-color: #ec0000; height: 100px">
+        <div class="row">
+            <div class="col-2" style="margin-left: 10px; margin-top: 10px">
+                <h1><img style="width: 250px; height: 75px;" src="css/imagens/santander-logo-7.png"
+                         alt="logo do Santander"></h1>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v4.0&appId=669393803566677&autoLogAppEvents=1"></script>
 
-<header>
-    <h1><img style="width: 250px; height: 75px;" src="css/imagens/santander-logo-7.png" alt="logo do Santander"></h1>
-</header>
+
 <div class="content">
-    
+
     <form class="form " method="post" action="login">
         <label>Digite seu CPF: </label>
-        <input type="number" placeholder="Digite seu CPF" name="identifier">
+        <input type="number" placeholder="Digite seu CPF" name="identifier" class="form-control">
         <br>
         <label>Digite sua Senha: </label>
-        <input type="password" class="form-control" placeholder="Digite sua Senha" name="password">
+        <label>
+            <input type="password" class="form-control" placeholder="Digite sua Senha" name="password">
+        </label>
         <br>
         <button class="btn btn-outline-danger">Login</button>
         <h5>Ou</h5>
@@ -30,10 +38,17 @@
         <div class="fb-login-button"  data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
     </form>
 </div>
+
+
+
+
 <footer>
+    <div class="footer-copyright py-3 text-center">
+        © 2019 Copyright:
+        <a href="https://www.accenture.com/br-pt">
+            <strong> Accenture Brasil > </strong>
+        </a>
+    </div>
 
 </footer>
 
-
-</body>
-</html>
