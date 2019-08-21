@@ -20,6 +20,10 @@ public class Saldo implements Serializable {
 
     public Saldo(){}
 
+    public Saldo(double valor){
+        this.valor = valor;
+    }
+
     public Saldo(long id, double valor, long idCartao)
     {
         this.valor = valor;
