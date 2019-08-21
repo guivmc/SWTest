@@ -45,7 +45,7 @@ public class SaldoController
     {
         System.out.println(idCard);
 
-        return new ModelAndView("view/index");
+        return new ModelAndView("view/saldo");
     }
 
 
