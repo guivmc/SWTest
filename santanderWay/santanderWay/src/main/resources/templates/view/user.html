@@ -6,82 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/styleUser.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <title>Novo de Usuário</title>
-
-    <script language="javascript">
-			function valida(){
-				if(valida_cpf(document.getElementById('cpf').value) && validacao())
-					return true;
-				else
-					alert('CPF Inválido');
-					return false;
-			}
-
-			function valida_cpf(cpf){
-				  var numeros, digitos, soma, i, resultado, digitos_iguais = 1;
-
-				  if (cpf.length < 11)
-						return false;
-
-				  for (i = 0; i < cpf.length - 1; i++) {
-                      if (cpf.charAt(i) != cpf.charAt(i + 1)) {
-                          digitos_iguais = 0;
-                          break;
-                      }
-                  }
-
-				  if (!digitos_iguais) {
-						numeros = cpf.substring(0,9);
-						digitos = cpf.substring(9);
-						soma = 0;
-						for (i = 10; i > 1; i--)
-							  soma += numeros.charAt(10 - i) * i;
-
-						resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-
-						if (resultado != digitos.charAt(0))
-							  return false;
-
-						numeros = cpf.substring(0,10);
-						soma = 0;
-
-						for (i = 11; i > 1; i--)
-							  soma += numeros.charAt(11 - i) * i;
-
-						resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-
-						if (resultado != digitos.charAt(1))
-							  return false;
-
-						return true;
-                  }
-				  else
-                      return false;
-			}
-
-            function validacao(){
-
-                var formulario = document.forms["formcadastro"]
-                var senha1 = formulario.password.value
-                var senha2 = formulario.password2.value
-
-                if(senha1=="" || senha2=="" )
-                {
-                    alert("senha não pode estar vazia")
-                    return false;
-                }
-                else if(senha1 != senha2)
-                {
-                    alert("senhas não são iguais")
-                    return false;
-                }
-
-                return true;
-            }
-		</script>
 </head>
 
 <body>
-
 
 <div class="row">
     <div class="col-12" style="background-color: #ec0000; height: 100px">
@@ -94,99 +21,107 @@
     </div>
 
 
-      <div class="col-1"></div>
-    <div class="col-5 m-2 divForm" style="height: 350px;">
-        <form class="form"  method="post" action="/addUser">
-            <div  class="row" style="padding-top: 100px">
-
-        <!-- INICIO FORMULÁRIO -->
-        <form class="form" name="formcadastro" action="/addUser" method="post" onsubmit="return valida()">
-            <div  class="row" style="padding-top: 100px">
-                <!-- CPF -->
-                <div class="col-5 a text-left">
-                    <label>Digite seu CPF: </label>
-                </div>
-                <div class="col-5 text-right">
-                    <input type="number" id="cpf" maxlength="11" class="form-control" placeholder="Digite seu CPF" name="identifier" style="width: 100%">
-                </div>
-                <div class="col-2 text-right"></div>
-
-                <!-- Nome -->
-                <div class="col-5 text-left">
-                    <label>Digite seu Nome: </label>
-                </div>
-                <div class="col-5 text-right">
-                    <input type="text" class="form-control"placeholder="Digite seu Nome Completo" name="name" style="width: 100%">
-                </div>
-                <div class="col-2 text-right"></div>
-
-
-                <!-- Opção sexual -->
-                <div class="col-5 text-left">
-                    <label> Escolha sua opção sexual:</label>
-                </div>
-                <div class="col-5 text-right">
-                    <select class="form-control" style="width: 100%">
-                        <option value="" selected disabled hidden>Selecionar</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Outros">Outros</option>
-                    </select>
-                </div>
-                <div class="col-2 text-right"></div>
-                <br>
-                <!-- Data Nasc -->
-                <div class="col-5 text-left">
-                    <label> Data de Nascimento</label>
-                </div>
-                <div class="col-5 text-right">
-                    <input type="date" class="form-control" name="bornDate" style="width: 100%">
-                    <div class="col-2 text-right"></div>
-                </div>
-
-                <br>
-
-                <!-- Email-->
-                <div class="col-5 text-left">
-                    <label> Digite seu email:</label>
-                </div>
-                <div class=" col-5 text-right" style="width: 100%">
-                    <input type="email" class="form-control" placeholder="Digite seu e-mail" name="email" style="width: 100%"
-                           data-match-error="Por favor, informe um e-mail correto." required>
-                    <div class="help-block with-errors"></div>
-                </div>
-                <div class="col-2 text-right"></div>
-
-                <!--Senha-->
-                <div class="col-5 text-left">
-                    <label>Digite uma Senha: </label>
-                </div>
-                <div class=" col-5 text-right ">
-                    <input type="password" name="password" class="form-control" placeholder="Digite sua Senha" style="width: 100%">
-                </div>
-                <div class="text-right col-2"></div>
-
-                <!--Confirma Senha-->
-                <div class="col-5 text-left">
-                    <label>Confirme sua Senha: </label>
-                </div>
-                <div class="col-5 text-right">
-                    <input type="password"  name="password2" class="form-control"placeholder="Confirme sua Senha" style="width: 100%">
-                </div>
-                <div class="col-2 text-right">
-                </div>
-
-                <!--Botão-->
-                <div class="col-9 text-right">
-                    <br>
-                    <button class="btn btn-outline-danger" name="validar" id="validar" value="Validar CPF">Cadastrar</button>
-                </div>
-
-            </div>
-        </form>
+    <div class="col-1">
 
     </div>
-    <div class="col"></div>
+    <div class="col-5 m-2 divForm" style="height: 350px;">
+        <div class="row" style="padding-top: 100px">
+            <!-- INICIO FORMULÁRIO -->
+            <form class="form" name="formcadastro" action="/addUser" method="post" onsubmit="return valida()">
+                <div class="row" style="padding-top: 100px">
+                    <!-- CPF -->
+                    <div class="col-5 a text-left">
+                        <label>Digite seu CPF: </label>
+                    </div>
+                    <div class="col-5 text-right">
+                        <input type="number" id="cpf" maxlength="11" class="form-control"
+                               placeholder="Digite seu CPF" name="identifier" style="width: 100%">
+                    </div>
+                    <div class="col-2 text-right"></div>
+
+                    <!-- Nome -->
+                    <div class="col-5 text-left">
+                        <label>Digite seu Nome: </label>
+                    </div>
+                    <div class="col-5 text-right">
+                        <input type="text" class="form-control" placeholder="Digite seu Nome Completo" name="name"
+                               style="width: 100%">
+                    </div>
+                    <div class="col-2 text-right"></div>
+
+
+                    <!-- Opção sexual -->
+                    <div class="col-5 text-left">
+                        <label> Escolha sua opção sexual:</label>
+                    </div>
+                    <div class="col-5 text-right">
+                        <select class="form-control" style="width: 100%">
+                            <option value="" selected disabled hidden>Selecionar</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-right"></div>
+                    <br>
+                    <!-- Data Nasc -->
+                    <div class="col-5 text-left">
+                        <label> Data de Nascimento</label>
+                    </div>
+                    <div class="col-5 text-right">
+                        <input type="date" class="form-control" name="bornDate" style="width: 100%">
+                        <div class="col-2 text-right"></div>
+                    </div>
+
+                    <br>
+
+                    <!-- Email-->
+                    <div class="col-5 text-left">
+                        <label> Digite seu email:</label>
+                    </div>
+                    <div class=" col-5 text-right" style="width: 100%">
+                        <input type="email" class="form-control" placeholder="Digite seu e-mail" name="email"
+                               style="width: 100%"
+                               data-match-error="Por favor, informe um e-mail correto." required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="col-2 text-right"></div>
+
+                    <!--Senha-->
+                    <div class="col-5 text-left">
+                        <label>Digite uma Senha: </label>
+                    </div>
+                    <div class=" col-5 text-right ">
+                        <input type="password" name="password" class="form-control" placeholder="Digite sua Senha"
+                               style="width: 100%">
+                    </div>
+                    <div class="text-right col-2"></div>
+
+                    <!--Confirma Senha-->
+                    <div class="col-5 text-left">
+                        <label>Confirme sua Senha: </label>
+                    </div>
+                    <div class="col-5 text-right">
+                        <input type="password" name="password2" class="form-control"
+                               placeholder="Confirme sua Senha" style="width: 100%">
+                    </div>
+                    <div class="col-2 text-right">
+                    </div>
+
+                    <!--Botão-->
+                    <div class="col-9 text-right">
+                        <br>
+                        <button class="btn btn-outline-danger" name="validar" id="validar" value="Validar CPF">
+                            Cadastrar
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+        <div class="col"></div>
+    </div>
 </div>
 
 <footer>
@@ -197,6 +132,76 @@
         </a>
     </div>
 </footer>
+
+<script language="javascript">
+    function valida() {
+        if (valida_cpf(document.getElementById('cpf').value) && validacao())
+            return true;
+        else
+            alert('CPF Inválido');
+        return false;
+
+        return true;
+    }
+
+    function valida_cpf(cpf) {
+        var numeros, digitos, soma, i, resultado, digitos_iguais = 1;
+
+        if (cpf.length < 11)
+            return false;
+
+        for (i = 0; i < cpf.length - 1; i++) {
+            if (cpf.charAt(i) != cpf.charAt(i + 1)) {
+                digitos_iguais = 0;
+                break;
+            }
+        }
+
+        if (!digitos_iguais) {
+            numeros = cpf.substring(0, 9);
+            digitos = cpf.substring(9);
+            soma = 0;
+            for (i = 10; i > 1; i--)
+                soma += numeros.charAt(10 - i) * i;
+
+            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+
+            if (resultado != digitos.charAt(0))
+                return false;
+
+            numeros = cpf.substring(0, 10);
+            soma = 0;
+
+            for (i = 11; i > 1; i--)
+                soma += numeros.charAt(11 - i) * i;
+
+            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+
+            if (resultado != digitos.charAt(1))
+                return false;
+
+            return true;
+        } else
+            return false;
+    }
+
+    function validacao() {
+
+        var formulario = document.forms["formcadastro"]
+        var senha1 = formulario.password.value
+        var senha2 = formulario.password2.value
+
+        if (senha1 == "" || senha2 == "") {
+            alert("senha não pode estar vazia")
+            return false;
+        } else if (senha1 != senha2) {
+            alert("senhas não são iguais")
+            return false;
+        }
+
+        return true;
+    }
+</script>
 
 </body>
 </html>
