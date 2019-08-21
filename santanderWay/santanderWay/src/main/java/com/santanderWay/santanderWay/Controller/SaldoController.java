@@ -20,15 +20,6 @@ public class SaldoController
     @Autowired
     private SaldoRepository saldoRepository;
 
-    @RequestMapping(value="/addSaldo", method = RequestMethod.GET)
-    public String addSaldo(HttpSession session)
-    {
-        if(session.getAttribute("userId") == null)
-            return "view/index";
-
-        return "view/saldo";
-    }
-
     @RequestMapping(value="/addSaldo", method = RequestMethod.POST)
     public String addSaldo(@ModelAttribute("Saldo") Saldo saldo, HttpSession session)
     {
