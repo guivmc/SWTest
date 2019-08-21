@@ -10,9 +10,10 @@
 </head>
 
 <body>
-    <header>
-        <div class="row">
-                <img style="width: 250px; height: 75px;" class="text-left col-3" src="css/imagens/santander-logo-8.png" alt="logo do Santander">
+<header>
+    <div class="row">
+        <img style="width: 250px; height: 75px;" class="text-left col-3" src="css/imagens/santander-logo-8.png"
+             alt="logo do Santander">
 
             <h1 class="text-center col-8 text-uppercase"><div th:each="user : ${user}" >
                 <p> <span th:text="${user.name}"></span></p>
@@ -20,49 +21,54 @@
             <a type="button"  th:href="@{/logout}" class="btn btn-outline-light" style="height: 50px;" value="Logout"> </a>
             <!-- User info -->
 
-        </div>
+    </div>
 
-    </header>
-    <div class="container">
+</header>
 
-
-        <div style="width: 800px;" id="carouselCard" class="carousel slide " data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item "th:each="cartao : ${cartao}">
-                    <link rel="stylesheet" href="css/card.css">
-                    <div class="card d-block w-100" style="height:450px;"  >
-                        <div class="card__front card__part" style="background-color:black">
-                            <img class="card__front-square card__square" src="css/imagens/logo.png">
-                            <img class="card__front-logo card__logo"  src="css/imagens/mastercard-logo.png">
-                            <a class="card_numer" th:href="${(#mvc.url('SC#showSaldos').arg(0, cartao.id)).build()}" ><span th:text="${cartao.numero}">0</span></a>
-                            <div class="card__space-75">
-                                <p class="card__info" th:text="${cartao.nome}">0name</p>
-                            </div>
-                            <div class="card__space-25">
-                                <span class="card__label">Validade:</span>
-                                <p class="card__info" th:text="${cartao.validade}">validade</p>
-                            </div>
+<div class="container">
+    <div style="width: 800px;" id="carouselCard" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item" th:each="cartao : ${cartao}">
+                <link rel="stylesheet" href="css/card.css">
+                <div class="card d-block w-100" style="height:450px;">
+                    <div class="card__front card__part" style="background-color:black">
+                        <img class="card__front-square card__square" src="css/imagens/logo.png">
+                        <img class="card__front-logo card__logo" src="css/imagens/mastercard-logo.png">
+                        <a class="card_numer" th:href="${(#mvc.url('SC#showSaldos').arg(0, cartao.id)).build()}"><span
+                                th:text="${cartao.numero}">0</span>
+                        </a>
+                        <div class="card__space-75">
+                            <p class="card__info" th:text="${cartao.nome}">0name</p>
+                        </div>
+                        <div class="card__space-25">
+                            <span class="card__label">Validade:</span>
+                            <p class="card__info" th:text="${cartao.validade}">validade</p>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item  active">
-                    <img class="d-block w-100" style="height:450px;"
-                    src="css/imagens/santander-logo-7.png"
-                        alt="Third slide">
-                    </div>
+            </div>
+
+            <div class="carousel-item active text-center" style="height:450px;">
+                <div>
+                    <img src="https://cdn4.iconfinder.com/data/icons/credit-card-payments-colored-icons-vol-1/48/11-512.png" width="200px">
                 </div>
-            <a class="carousel-control-prev" href="#carouselCard" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselCard" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+                <a href="http://localhost:8080/addCard" class="d-block w-100">
+                    Adicionar novo cartão
+                </a>
+            </div>
+
         </div>
+
+
+        <a class="carousel-control-prev" href="#carouselCard" role="button" data-slide="prev" style="color:#FF0000;">
+            <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselCard" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-
-
 
     <footer>
         <div class="footer-copyright py-3 text-center">
@@ -77,10 +83,11 @@
     <script src="js/bootstrap.min.js" >
     </script>
    <script >
+
          $('.carousel').carousel({
         pause: true,
         interval: false});
-    </script>
+</script>
 </body>
 
 </html>
