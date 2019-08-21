@@ -11,26 +11,26 @@
 
 <body>
     <header>
-        <div class="">
+        <div class="row" style="width:100%;">
                 <img style="width: 250px; height: 75px;" class="text-left col-3" src="css/imagens/santander-logo-8.png" alt="logo do Santander">
 
             <h1 class="text-center col-8 text-uppercase"><div th:each="user : ${user}" >
                 <p> <span th:text="${user.name}"></span></p>
             </div> Bem Vindo ao Santader Way</h1>
-            <a type="button"  th:href="@{/logout}" class="btn btn-outline-light" style="height: 50px;" value="Logout"> </a>
+            <a class="col-1 text-right"  th:href="@{/logout}" value="Logout"> Logout</a>
             <!-- User info -->
 
     </div>
 
 </header>
 
-<div class="container">
-    <div style="width: 800px;" id="carouselCard" class="carousel slide" data-ride="carousel">
+    <div class="col-lg-4 align-items-center">
+    <div style="width: 800px; margin-left:60%;" id="carouselCard" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item" th:each="cartao : ${cartao}">
                 <link rel="stylesheet" href="css/card.css">
                 <div class="card d-block w-100" style="height:450px;">
-                    <div class="card__front card__part" style="background-color:black">
+                    <div class="card__front card__part" style="background-color:black; margin-left:30%;">
                         <img class="card__front-square card__square" src="css/imagens/logo.png">
                         <img class="card__front-logo card__logo" src="css/imagens/mastercard-logo.png">
                         <a class="card_numer" th:href="${(#mvc.url('SC#showSaldos').arg(0, cartao.id)).build()}"><span
@@ -48,11 +48,11 @@
             </div>
 
             <div class="carousel-item active text-center" style="height:450px;">
-                <div>
-                    <img src="https://cdn4.iconfinder.com/data/icons/credit-card-payments-colored-icons-vol-1/48/11-512.png" width="200px">
-                </div>
                 <a href="http://localhost:8080/addCard" class="d-block w-100">
-                    Adicionar novo cartão
+                    <div>
+                        <img src="https://cdn4.iconfinder.com/data/icons/credit-card-payments-colored-icons-vol-1/48/11-512.png" width="200px">
+                    </div>
+                        Adicionar novo cartão
                 </a>
             </div>
 
@@ -68,8 +68,10 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+</div>
 
-    <footer>
+
+    <footer class="page-footer font-small blue">
         <div class="footer-copyright py-3 text-center">
             © 2019 Copyright:
             <a href="https://www.accenture.com/br-pt">
