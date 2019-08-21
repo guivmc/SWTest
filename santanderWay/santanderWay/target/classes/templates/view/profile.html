@@ -10,10 +10,9 @@
 </head>
 
 <body>
-<header>
-    <div class="row">
-        <img style="width: 250px; height: 75px;" class="text-left col-3" src="css/imagens/santander-logo-8.png"
-             alt="logo do Santander">
+    <header>
+        <div class="">
+                <img style="width: 250px; height: 75px;" class="text-left col-3" src="css/imagens/santander-logo-8.png" alt="logo do Santander">
 
             <h1 class="text-center col-8 text-uppercase"><div th:each="user : ${user}" >
                 <p> <span th:text="${user.name}"></span></p>
