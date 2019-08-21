@@ -12,5 +12,5 @@ public interface SaldoRepository extends CrudRepository<Saldo, Integer>
     Saldo findByIdCartaoLike(long idCartao);
 
     @Query("select new com.santanderWay.santanderWay.Model.Saldo(s.id, s.valor, s.idCartao) from Saldo s where s.idCartao = ?1")
-    List<Cartao> findSaldos(long filterValue);
+    List<Saldo> findSaldos(long filterValue);
 }
