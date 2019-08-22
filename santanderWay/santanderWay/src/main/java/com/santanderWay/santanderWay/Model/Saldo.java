@@ -13,15 +13,16 @@ public class Saldo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long   id;
+    private long  id;
 
     private double valor;
     private long idCartao;
 
     public Saldo(){}
 
-    public Saldo(double valor){
+    public Saldo(double valor, long idCartao){
         this.valor = valor;
+        this.idCartao = idCartao;
     }
 
     public Saldo(long id, double valor, long idCartao)
@@ -59,4 +60,6 @@ public class Saldo implements Serializable {
     public void setIdCartao(long idCartao) {
         this.idCartao = idCartao;
     }
+
+
 }
