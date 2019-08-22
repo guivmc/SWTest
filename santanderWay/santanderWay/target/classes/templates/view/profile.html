@@ -32,7 +32,7 @@
         <div class="carousel-inner">
             <div class="carousel-item" th:each="cartao : ${cartao}">
                 <link rel="stylesheet" href="css/card.css">
-                <div class="card d-block w-100" style="height:450px;">
+                <div class="card d-block w-100" style="height:200px;">
                     <div class="card__front card__part" style="background-color:black; margin-left:30%;">
                         <img class="card__front-square card__square" src="css/imagens/logo.png">
                         <img class="card__front-logo card__logo" src="css/imagens/mastercard-logo.png">
@@ -46,6 +46,11 @@
                             <span class="card__label">Validade:</span>
                             <p class="card__info" th:text="${cartao.validade}">validade</p>
                         </div>
+                    </div>
+                </div>
+                <div class="center" th:each="saldo : ${saldo}">
+                    <div th:if="${saldo.idCartao}==${cartao.id} ">
+                        <p th:text="${saldo.valor}"></p>
                     </div>
                 </div>
             </div>

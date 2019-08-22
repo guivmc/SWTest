@@ -49,17 +49,12 @@ public class IndexController
              List<Cartao> cartao = this.cartaoRepository.findCards(exist.getId());
              List<Saldo> saldoTotal = new ArrayList<>();
 
-             for (Cartao forCartao: cartao) {
+             for (Cartao forCartao: cartao)
+             {
 
                  List<Saldo> saldo = this.saldoRepository.findSaldos(forCartao.getId());
 
-                 double total = 0;
-
-                 for (Saldo somaSaldo: saldo) {
-                     total += somaSaldo.getValor();
-                 }
-
-                 saldoTotal.add(new Saldo(total));
+                 saldoTotal.addAll(saldo);
              }
 
              ModelAndView model = new ModelAndView("view/profile");
