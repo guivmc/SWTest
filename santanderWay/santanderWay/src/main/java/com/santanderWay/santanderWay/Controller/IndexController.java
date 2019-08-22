@@ -54,12 +54,13 @@ public class IndexController
                  List<Saldo> saldo = this.saldoRepository.findSaldos(forCartao.getId());
 
                  double total = 0;
+                 long idCartao;
 
                  for (Saldo somaSaldo: saldo) {
                      total += somaSaldo.getValor();
                  }
 
-                 saldoTotal.add(new Saldo(total));
+                 saldoTotal.add(new Saldo(total, forCartao.getId()));
              }
 
              ModelAndView model = new ModelAndView("view/profile");
