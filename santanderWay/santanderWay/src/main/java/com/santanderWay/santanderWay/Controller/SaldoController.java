@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -20,14 +21,6 @@ public class SaldoController
     @Autowired
     private SaldoRepository saldoRepository;
 
-    @RequestMapping(value="/addSaldo", method = RequestMethod.GET)
-    public String addSaldo(HttpSession session)
-    {
-        if(session.getAttribute("userId") == null)
-            return "view/index";
-
-        return "view/saldo";
-    }
 
     @RequestMapping(value="/addSaldo", method = RequestMethod.POST)
     public String addSaldo(@ModelAttribute("Saldo") Saldo saldo, HttpSession session)
@@ -35,17 +28,23 @@ public class SaldoController
         if(session.getAttribute("userId") == null)
             return "view/index";
 
+        saldo.setIdCartao((long) session.getAttribute("cardId"));
+
+        session.removeAttribute("cardId");
+
         this.saldoRepository.save(saldo);
 
-        return "redirect:/addSaldo";
+        return "redirect:/home";
     }
 
-    @RequestMapping("/{idCard}")
-    public ModelAndView showSaldos(@PathVariable("idCard") long idCard)
+    @RequestMapping("/addSaldo?idCard={idCard}")
+    public String showSaldos(@PathVariable("idCard") long idCard, HttpServletRequest request)
     {
         System.out.println(idCard);
 
-        return new ModelAndView("view/index");
+        request.getSession().setAttribute("cardId", idCard);
+
+        return "view/saldo";
     }
 
 

@@ -3,24 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6fd84320-e7f1-4a39-9627-52f8eb915710" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styleCartao.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styleCartao.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styleIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styleIndex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styleProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styleProfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styleSaldo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styleSaldo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styleUser.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styleUser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view/cartao.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/view/cartao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/view/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/view/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/santanderWay/santanderWay/Controller/SaldoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santanderWay/santanderWay/Controller/SaldoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view/saldo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/view/saldo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/view/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/styleCartao.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styleCartao.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/styleIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styleIndex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/styleProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styleProfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/styleSaldo.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styleSaldo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/styleUser.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styleUser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/view/cartao.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/view/cartao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/view/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/view/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/view/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/view/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/view/saldo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/view/saldo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/view/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/view/user.html" afterDir="false" />
     </list>
@@ -31,6 +15,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>

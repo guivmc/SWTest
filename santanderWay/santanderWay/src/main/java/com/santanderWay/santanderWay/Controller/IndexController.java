@@ -2,25 +2,21 @@ package com.santanderWay.santanderWay.Controller;
 
 import com.santanderWay.santanderWay.CartaoRepository;
 import com.santanderWay.santanderWay.Model.Cartao;
+import com.santanderWay.santanderWay.Model.Saldo;
 import com.santanderWay.santanderWay.Model.User;
+import com.santanderWay.santanderWay.SaldoRepository;
 import com.santanderWay.santanderWay.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.management.modelmbean.RequiredModelMBean;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Controller
 @Scope("session")
@@ -31,6 +27,9 @@ public class IndexController
 
     @Autowired
     private CartaoRepository cartaoRepository;
+
+    @Autowired
+    private SaldoRepository saldoRepository;
 
 
     @RequestMapping("/")
@@ -48,10 +47,25 @@ public class IndexController
          if (exist != null)
          {
              List<Cartao> cartao = this.cartaoRepository.findCards(exist.getId());
+             List<Saldo> saldoTotal = new ArrayList<>();
+
+             for (Cartao forCartao: cartao) {
+
+                 List<Saldo> saldo = this.saldoRepository.findSaldos(forCartao.getId());
+
+                 double total = 0;
+
+                 for (Saldo somaSaldo: saldo) {
+                     total += somaSaldo.getValor();
+                 }
+
+                 saldoTotal.add(new Saldo(total));
+             }
 
              ModelAndView model = new ModelAndView("view/profile");
              model.addObject("user", exist);
              model.addObject("cartao", cartao);
+             model.addObject("saldo", saldoTotal);
 
              request.getSession().setAttribute("userId",  exist.getId());
              request.getSession().setAttribute("userName",  exist.getName());
