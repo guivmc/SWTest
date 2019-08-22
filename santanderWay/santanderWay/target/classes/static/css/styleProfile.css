@@ -1,7 +1,5 @@
 i.icon-red {
-    width: 70%;
     color: red;
-
 }
 *{
     padding:0;
@@ -14,7 +12,9 @@ footer{
     color: white;
     height: 100px;
     width: 100%;
-
+    position:fixed;
+    left: 0;
+    bottom: 0;
 
 }
 .container{

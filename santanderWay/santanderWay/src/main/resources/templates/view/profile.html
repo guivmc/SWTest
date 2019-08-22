@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="center" th:each="saldo : ${saldo}">
+                <div class="text-center" th:each="saldo : ${saldo}">
                     <div th:if="${saldo.idCartao}==${cartao.id} ">
                         <p th:text="${saldo.valor}"></p>
                     </div>
@@ -77,7 +77,7 @@
 </div>
 
 
-    <footer class="page-footer font-small blue">
+    <footer>
         <div class="footer-copyright py-3 text-center">
             © 2019 Copyright:
             <a href="https://www.accenture.com/br-pt">
