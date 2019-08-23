@@ -17,6 +17,8 @@ public class Saldo implements Serializable {
 
     private double valor;
     private long idCartao;
+    private String name;
+    private String details;
 
     public Saldo(){}
 
@@ -25,11 +27,13 @@ public class Saldo implements Serializable {
         this.idCartao = idCartao;
     }
 
-    public Saldo(long id, double valor, long idCartao)
+    public Saldo(long id, double valor, long idCartao, String name, String details)
     {
         this.valor = valor;
         this.idCartao = idCartao;
         this.id = id;
+        this.name = name;
+        this.details = details;
     }
 
     public static long getSerialVersionUID() {
@@ -61,5 +65,19 @@ public class Saldo implements Serializable {
         this.idCartao = idCartao;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
 }
