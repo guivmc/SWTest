@@ -16,7 +16,6 @@ height: 190px;
 }
 
 .card__part{
-  box-shadow: 1px 1px #aaa3a3;
     top: 0;
   position: absolute;
 z-index: 1000;
