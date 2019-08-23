@@ -12,13 +12,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
+@RestController
 @Scope("session")
 public class IndexController
 {
@@ -94,6 +95,12 @@ public class IndexController
             this.userRepository.save(user);
 
         return "redirect:/addUser";
+    }
+
+    @RequestMapping("/JSONTEST")
+    public Iterable<User> getAllNotes()
+    {
+        return this.userRepository.findAll();
     }
 
 }
