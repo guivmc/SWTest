@@ -50,7 +50,12 @@
                 </div>
                 <div class="text-center" th:each="saldo : ${saldo}">
                     <div th:if="${saldo.idCartao}==${cartao.id} ">
-                        <p th:text="${saldo.valor}"></p>
+                        <p th:text="${saldo.valor}" onclick="displaySaldo($(this).next('.Saldo-info'));">
+                            <div class="Saldo-info" style="display: none">
+                                <p th:text="${saldo.name}"></p>
+                                <p th:text="${saldo.details}"></p>
+                            </div>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -90,10 +95,14 @@
     <script src="js/bootstrap.min.js" >
     </script>
    <script >
-
          $('.carousel').carousel({
         pause: true,
         interval: false});
+    </script>
+<script>
+    function displaySaldo(child) {
+        $(child).toggle(500);
+    }
 </script>
 </body>
 

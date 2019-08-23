@@ -48,9 +48,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="center" th:each="saldo : ${saldo}">
+                <div class="text-center" th:each="saldo : ${saldo}">
                     <div th:if="${saldo.idCartao}==${cartao.id} ">
-                        <p th:text="${saldo.valor}"></p>
+                        <p th:text="${saldo.valor}" onclick="displaySaldo($(this).next('.Saldo-info'));">
+                            <div class="Saldo-info" style="display: none">
+                                <p th:text="${saldo.name}"></p>
+                                <p th:text="${saldo.details}"></p>
+                            </div>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -65,8 +70,7 @@
             </div>
 
         </div>
-
-        <a class="carousel-control-prev large" href="#carouselCard" role="button" data-slide="prev" style="color:#FF0000;">
+        <a class="carousel-control-prev" href="#carouselCard" role="button" data-slide="prev" style="color:#FF0000;">
             <i class="material-icons icon-red" aria-hidden="true">navigate_before</i>
             <span class="sr-only">Previous</span>
         </a>
@@ -78,7 +82,7 @@
 </div>
 
 
-    <footer class="page-footer font-small blue">
+    <footer>
         <div class="footer-copyright py-3 text-center">
             © 2019 Copyright:
             <a href="https://www.accenture.com/br-pt">
@@ -91,10 +95,14 @@
     <script src="js/bootstrap.min.js" >
     </script>
    <script >
-
          $('.carousel').carousel({
         pause: true,
         interval: false});
+    </script>
+<script>
+    function displaySaldo(child) {
+        $(child).toggle(500);
+    }
 </script>
 </body>
 
