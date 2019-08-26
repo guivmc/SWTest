@@ -7,27 +7,47 @@ i.icon-red {
     font-family: "Trebuchet MS";
 
 }
-footer{
-    background-color: #ec0000;
-    color: white;
+nav .nav-wrapper {
+    background-color: white;
+}
+
+a.bntLogout{
+    margin-right: 15px;
+    color: red;
+}
+
+.footer{
     height: 100px;
     width: 100%;
     position:fixed;
     left: 0;
     bottom: 0;
-
 }
+
+.page-footer {
+    background-color: red !important;
+    text-align: center;
+}
+
 .container{
     height:450px;
     width:300px;
 
 }
 h1{
-font-size:2em!important;
+    font-size:2em!important;
 }
 
 #ultimosLancamentos{
     border: 1px solid blue;
     width: 200px;
     height: 200px;
+}
+#imgLogo{
+    width: 265px;
+    height: 50px;
+    margin-left: 10px;
+}
+#extrato{
+    position: relative;
 }
