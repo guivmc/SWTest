@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { SwtestService } from './services/swtest.service';
 import { AdimComponent } from './components/adim/adim.component';
 import { HomeComponent } from './components/home/home.component';
+import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdimComponent,
-    HomeComponent
+    HomeComponent,
+    ViewRegistrationComponent
   ],
   imports: [
     BrowserModule,

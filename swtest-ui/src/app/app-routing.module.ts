@@ -2,8 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdimComponent } from './components/adim/adim.component';
 import { HomeComponent } from './components/home/home.component';
+import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 
 const routes: Routes = [
+	{
+		path: 'adim/view/:id',
+		component: ViewRegistrationComponent
+	},
 	{
 		path:'adim',
 		component: AdimComponent
