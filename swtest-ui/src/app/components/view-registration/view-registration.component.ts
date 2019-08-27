@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwtestService } from '../../services//swtest.service';
-import { ActivedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-registration',
@@ -11,7 +11,7 @@ export class ViewRegistrationComponent implements OnInit {
 	
   public userReg;
 
-  constructor(private swTestService: SwtestService, private route: ActivedRoute) { }
+  constructor(private swTestService: SwtestService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 	  this.getUserReg(this.route.snapshot.params.id);
