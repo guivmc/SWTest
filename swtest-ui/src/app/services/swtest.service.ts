@@ -16,6 +16,6 @@ export class SwtestService {
   
   getUsers()
   {
-	  return this.http.get('http://localhost:8080/rest');
+	  return this.http.get('/server/list');
   }
 }
