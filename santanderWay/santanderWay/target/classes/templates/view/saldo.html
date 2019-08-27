@@ -1,91 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Novo de Cartão</title>
-
-    <link rel="stylesheet" href="css/styleUser.css">
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <script>
-      $(document).ready(function(){
-        $('select').formSelect();
-      });
-
-      $(document).ready(function(){
-        $('.datepicker').datepicker();
-       });
-
-
-    </script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styleSaldo.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <title>Adicionar Fatura </title>
 </head>
 
 <body>
-
-<!--LOGO-->
-<div class="row" style="width:100%;">
-    <div class="col-12" style="background-color: #ec0000; height: 100%">
+<div class="">
+    <div class="col-12" style="background-color: #ec0000; height: 100px">
         <div class="row">
-            <div class="col-2" style="margin-left: 10px;">
-                <img style="width: 250px; height: 75px;" src="http://localhost:8080/css/imagens/santander-logo-7.png"
-                     alt="logo do Santander">
+            <div class="col-2" style="margin-left: 10px; margin-top: 10px">
+                <h1><img style="width: 250px; height: 75px;" src="css/imagens/santander-logo-7.png"
+                         alt="logo do Santander"></h1>
             </div>
         </div>
     </div>
+
+    <div class="col-1"></div>
+    <div class="col-5 m-4 divForm" style="height: 500px;">
+        <form class="form"  method="post" action="/addSaldo">
+            <div  class="row" style="padding-top: 100px">
+
+                <!-- NOME -->
+                <div class="col-5 a text-left">
+                    <label>Digite o nome do estabelecimento: </label>
+                </div>
+                <div class="col-5 text-right">
+                    <input type="text" class="form-control" placeholder="Digite o nome" name="name" style="width: 100%">
+                </div>
+
+
+                <!-- VALOR -->
+                <div class="col-5 a text-left">
+                    <label>Digite o valor gasto : </label>
+                </div>
+                <div class="col-5 text-right">
+                    <input type="number" class="form-control" placeholder="Digite o Saldo" name="valor" style="width: 100%">
+                </div>
+
+
+                <!-- DETALHES -->
+                <div class="col-5 a text-left">
+                    <label>Digite os detalhes da compra : </label>
+                </div>
+                <div class="col-5 text-right">
+                    <input type="text" class="form-control" placeholder="Digite os detalhes" name="details" style="width: 100%">
+                </div>
+                <div class="col-2 text-right"></div>
+
+                <!--Botão-->
+                <div class="col-9 text-right">
+                    <br>
+
+                    <button class="btn btn-outline-danger">Adicionar Saldo</button>
+                </div>
+
+                </div>
+        </form>
+
+    </div>
+    <div class="col"></div>
 </div>
 
-<form class="container" name="form-control" method="post" action="/addSaldo">
-
-    <div class="row">
-
-        <div class="input-field col s6">
-            <i class="material-icons prefix">account_balance</i>
-            <input type="text" class="form-control" id="nName" name="name">
-            <label for="nName">Nome do Estabelecimento</label>
-        </div>
-
-        <div class="input-field col s6">
-            <i class="material-icons prefix">attach_money</i>
-            <input type="number" class="form-control" name="valor" id="valor">
-            <label for="valor">Valor Gasto</label>
-        </div>
-    </div>
-
-
-
-    <div class="row">
-        <div class="input-field col s12">
-            <i class="material-icons prefix">description</i>
-            <input type="text" id="text" class="form-control" name="details">
-            <label for="text">Detalhes da Compra</label>
-        </div>
-
-    </div>
-
-    <div>
-        <button class="btn waves-effect waves-light btn-color" type="submit" name="validar" id="validar">Gravar
-            <i class="material-icons right">send</i>
-        </button>
-    </div>
-</form>
-
-<!--RODAPÉ-->
 <footer>
     <div class="footer-copyright py-3 text-center">
         © 2019 Copyright:
         <a href="https://www.accenture.com/br-pt">
-            <strong> Accenture Brasil </strong>
+            <strong> Accenture Brasil > </strong>
         </a>
     </div>
 </footer>
-
 </body>
 </html>
