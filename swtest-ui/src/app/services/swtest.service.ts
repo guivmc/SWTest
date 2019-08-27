@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 
 const httpOptions = {
 	headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -16,6 +17,15 @@ export class SwtestService {
   
   getUsers()
   {
-	  return this.http.get('/server/list');
+	  return this.http.get('/server/server/rest/list');
+  }
+  
+  getUser(id: number){
+	  return this.http.get('/server/server/rest/' + id);
+  }
+  
+  createUser(user){
+	  let body = JSON.stringify(user);
+	   return this.http.post('/server/server/rest/add', body, httpOptions );
   }
 }
