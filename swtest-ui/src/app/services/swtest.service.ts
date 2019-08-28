@@ -21,7 +21,7 @@ export class SwtestService {
   }
   
   getUser(id: number){
-	  return this.http.get('/server/server/rest/' + id);
+	  return this.http.get('/server/server/rest/find/' + id);
   }
   
   createUser(user){

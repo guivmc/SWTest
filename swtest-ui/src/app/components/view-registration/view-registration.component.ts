@@ -18,7 +18,7 @@ export class ViewRegistrationComponent implements OnInit {
   }
 
   getUserReg(id:number){
-	  this.userReg.getUser(id).subscribe(
+	  this.swTestService.getUser(id).subscribe(
 	  data => { this.userReg = data; },
 	  err => console.error(err),
 	  () => console.log('User Loaded')

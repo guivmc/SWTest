@@ -30,7 +30,7 @@ public class RestExampleController
         this.userRepository.save(user);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/find/{id}")
     public User get(@PathVariable("id") long id)
     {
         return this.userRepository.findById(id);
