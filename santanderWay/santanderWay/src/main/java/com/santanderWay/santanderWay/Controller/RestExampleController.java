@@ -11,19 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest")
+@RequestMapping("/server/rest")
 public class RestExampleController
 {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping()
+    @GetMapping("/list")
     public  Iterable<User> list()
     {
         return this.userRepository.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.OK)
     public void create(@RequestBody User user)
     {
