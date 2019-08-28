@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SwtestService } from '../../services//swtest.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +15,7 @@ export class HomeComponent implements OnInit {
   userForm: FormGroup;
   validMessage: string = "";
 
-  constructor(private swTestService: SwtestService) { }
+  constructor(private swTestService: SwtestService, private router: Router) { }
 
   ngOnInit() {
 	  this.userForm = new FormGroup({
@@ -37,5 +39,9 @@ export class HomeComponent implements OnInit {
 		  this.validMessage = "Não foi";
 	  }
   }
+  
+  btnClick= function () {
+        this.router.navigateByUrl('/adim');
+};
 
 }
