@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
 	
   userForm: FormGroup;
   validMessage: string = "";
+  
+  number: string;
 
   constructor(private swTestService: SwtestService, private router: Router) { }
 
@@ -42,6 +44,10 @@ export class HomeComponent implements OnInit {
   
   btnClick= function () {
         this.router.navigateByUrl('/adim');
-};
+  };
+  
+  serachUser() {
+		this.router.navigateByUrl('adim/view/' + this.number);
+  }
 
 }
