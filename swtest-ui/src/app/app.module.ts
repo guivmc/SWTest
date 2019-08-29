@@ -10,7 +10,7 @@ import { SwtestService } from './services/swtest.service';
 import { AdimComponent } from './components/adim/adim.component';
 import { HomeComponent } from './components/home/home.component';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
-import { UserAndCardsComponent } from './component/user-cards/user-and-cards.component';
+import { UserAndCardsComponent } from './components/user-cards/user-and-cards.component';
 
 @NgModule({
   declarations: [
