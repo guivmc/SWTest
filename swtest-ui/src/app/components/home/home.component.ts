@@ -36,8 +36,7 @@ export class HomeComponent implements OnInit {
 				return true;
 			},
 			succ => { this.validMessage = "foi"; },
-			error => { this.validMessage = "Não foi"; }
-			
+			err => { this.validMessage = "Não foi"; }	
 		)
 	  }
 	  else{
