@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/server/rest")
 public class RestExampleController
 {
@@ -34,5 +32,11 @@ public class RestExampleController
     public User get(@PathVariable("id") long id)
     {
         return this.userRepository.findById(id);
+    }
+
+    @PostMapping("/login")
+    public HttpStatus login(@RequestBody User user){
+        User temp = this.userRepository.findByIdentifierLikeAndPasswordLike(user.getIdentifier(), user.getPassword());
+        return temp == null ? HttpStatus.BAD_REQUEST : HttpStatus.OK;
     }
 }
