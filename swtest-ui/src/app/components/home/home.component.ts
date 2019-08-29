@@ -29,13 +29,15 @@ export class HomeComponent implements OnInit {
 
   submitRegistration(){
 	  if(this.userForm.valid){
-		this.validMessage = "foi";
+		
 		this.swTestService.createUser(this.userForm.value).subscribe(
 			data => { 
 				this.userForm.reset();
 				return true;
 			},
-			error => { return Observable.throw(error); }
+			succ => { this.validMessage = "foi"; },
+			error => { this.validMessage = "Não foi"; }
+			
 		)
 	  }
 	  else{
