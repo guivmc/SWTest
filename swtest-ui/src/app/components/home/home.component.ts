@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwtestService } from '../../services//swtest.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 
 @Component({
@@ -35,8 +33,7 @@ export class HomeComponent implements OnInit {
 				this.userForm.reset();
 				return true;
 			},
-			succ => { this.validMessage = "foi"; },
-			err => { this.validMessage = "Não foi"; }	
+			succ => { this.validMessage = "foi"; }
 		)
 	  }
 	  else{
