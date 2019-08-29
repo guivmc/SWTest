@@ -21,7 +21,11 @@ export class SwtestService {
   }
   
   getUser(id: number){
-	  return this.http.get('/server/server/rest/find/' + id);
+	  return this.http.get('/server/server/rest/findUser/' + id);
+  }
+  
+  getUserCards(id: number){
+	  return this.http.get('/server/server/rest/findUserCards/' + id);
   }
   
   createUser(user){
