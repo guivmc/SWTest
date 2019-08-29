@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 	  this.userForm = new FormGroup({
 		  name: new FormControl('', Validators.required),
-		  email: new FormControl('', Validators.required)
+		  email: new FormControl('', Validators.required),
+		  identifier: new FormControl('', Validators.required)
 	  });
   }
 

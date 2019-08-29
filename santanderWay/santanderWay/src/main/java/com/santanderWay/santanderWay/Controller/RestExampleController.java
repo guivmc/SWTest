@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,10 +31,18 @@ public class RestExampleController
     }
 
     @PostMapping("/add")
-    @ResponseStatus(HttpStatus.OK)
-    public void create(@RequestBody User user)
+    //@ResponseStatus(HttpStatus.OK)
+    public void create(@RequestBody User user,  HttpServletResponse response)
     {
-        this.userRepository.save(user);
+        User exist = this.userRepository.findByIdentifierLike(user.getIdentifier());
+
+        if(exist == null)
+        {
+            this.userRepository.save(user);
+            response.setStatus(HttpServletResponse.SC_ACCEPTED);
+        }
+        else
+            response.setStatus(HttpServletResponse.SC_CONFLICT);
     }
 
     @GetMapping("/findUser/{id}")
